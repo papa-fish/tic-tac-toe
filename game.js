@@ -1,41 +1,80 @@
-const playerOne = document.querySelector('.player-icon-choice #player-x');
-const playerTwo = document.querySelector('.player-icon-choice #player-o');
-const playerChoice = document.querySelectorAll('.grid-wrapper div');
+// -- game board global variables ======================
+const winningCombinations = [
+    [0, 1, 2],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 4, 6],
+    [3, 4, 5],
+    [2, 5, 8],
+    [6, 7, 8]
+];
 
-// if statement... if x is clicked run handlePlayerOne
-// else if O is clicked run handlePlayerTwo
+let isPlayerOneTurn = true;
+let turnTracker = 0;
+let playerOneChoices = [];
+let playerTwoChoices = [];
 
-if (playerOne.addEventListener('click', handlePlayerOneTurn)) {
+// -- DOM variables =============================
+const playerChoice = document.querySelectorAll('.board div');
+const h2Elem = document.querySelector('.player-turn h2');
+const playAgainBtn = document.querySelector('#play-again');
+const spanElem = document.querySelector('span');
+
+// -- 
+for (let choice of playerChoice) {
+    choice.addEventListener('click', handlePlayerTurn);
+};
+
+function processPlayerTurn(tokenPlacement) {
+
+    turnTracker++;
+    let tokenPlacementValue = Number(tokenPlacement.dataset.indexNumber);
+
+    if (isPlayerOneTurn === true) {
+
+        tokenPlacement.classList.add('x');
+        tokenPlacement.innerText = "X";
+        playerOneChoices.push(tokenPlacementValue);
+        h2Elem.innerText = "Player Two's Turn";
+        h2Elem.style.backgroundColor = "#FFAEBC";
+        checkWinningCombinations(playerOneChoices)
+
+    } else {
+
+        tokenPlacement.classList.add('o');
+        tokenPlacement.innerText = "O";
+        playerTwoChoices.push(tokenPlacementValue);
+        h2Elem.innerText = "Player One's Turn";
+        h2Elem.style.backgroundColor = "#B4F8C8";
+        checkWinningCombinations(playerTwoChoices)
+    }
+
+    spanElem.innerText = turnTracker;
+    isPlayerOneTurn = !isPlayerOneTurn;
+};
+
+function handlePlayerTurn(evt) {
     
-    function handlePlayerOneTurn(evt) {
-        for (let choice of playerChoice) {
-            choice.addEventListener('click', handlePlayerOne);
-
-            function handlePlayerOne(evt) {
-                let playerClick = evt.target;
-                playerClick.innerText = "X";
-                evt.target.style.backgroundColor = "green";
-            }
-        }
+    const tokenPlacement = evt.target
+    processPlayerTurn(tokenPlacement);
+ 
+    if (turnTracker === 9) {  
+        h2Elem.innerText = "DRAW";
+        playAgainBtn.style.display = "inline-block";
+        return;
     }
 };
 
-if (playerTwo.addEventListener('click', handlePlayerTwoTurn)) {
+function checkWinningCombinations(array) {
 
-    function handlePlayerTwoTurn(evt) {
-        for (let choice of playerChoice) {
-            choice.addEventListener('click', handlePlayerTwo);
+    for (const combination of winningCombinations) {
 
-            function handlePlayerTwo(evt) {
-                let playerClick = evt.target;
-                playerClick.innerText = "O";
-                evt.target.style.backgroundColor = "red";
-            }
-        }
+        const [num1, num2, num3] = combination;
+        if (array.includes(num1) && array.includes(num2) && array.includes(num3)) {
+            playAgainBtn.style.display = "inline-block";   
+            return true;
+        }  
     }
+    return false;
 };
-
-
-// document.querySelector('#results').style.display = "block";
-
-// document.querySelector('#play-again').style.display = "inline-block";

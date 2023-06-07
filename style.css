@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     background-color: #FBE7C6;
+    text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,34 +19,25 @@ h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
+    background-color: #B4F8C8;
 }
 
-#player-x, #player-o {
-    width: 2rem;
-    height: 2rem;
-    font-size: 20px;
-}
-
-#player-x {
-    background-color: green;
-}
-
-#player-o {
-    background-color: red;
-}
-
-.grid-wrapper {
+.board {
     display: grid;
     justify-content: center;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
     font-size: 5rem;
 }
 
-.grid-wrapper > div {
+.board > div {
     background-color: #A0E7E5;
     border: 2px solid black;
+}
+
+.o, .x {
     text-align: center;
+    padding-top: 18%;
 }
 
 #results {

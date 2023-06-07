@@ -14,30 +14,27 @@
         <h1>Tic Tac Toe</h1>
     </header>
 
-    <section class="player-icon-choice">
-        <h2>
-            Click below to select who's turn it is
-            <br><br>
-            Player One: <button id="player-x">X</button> 
-            <br> or <br> 
-            Player Two: <button id="player-o">O</button>
-        </h2>
+    <p>Turn <span>0</span></p>
+    
+    <section class="player-turn">
+        <h2>Player One's Turn</h2>
     </section>
 
-    <main class="grid-wrapper">
-        <div id="one"></div>
-        <div id="two"></div>
-        <div id="three"></div>
-        <div id="four"></div>
-        <div id="five"></div>
-        <div id="six"></div>
-        <div id="seven"></div>
-        <div id="eight"></div>
-        <div id="nine"></div>
+    <main class="board">
+        <div id="box-zero" data-index-number="0"></div>
+        <div id="box-one" data-index-number="1"></div>
+        <div id="box-two" data-index-number="2"></div>
+        <div id="box-three" data-index-number="3"></div>
+        <div id="box-four" data-index-number="4"></div>
+        <div id="box-five" data-index-number="5"></div>
+        <div id="box-six" data-index-number="6"></div>
+        <div id="box-seven" data-index-number="7"></div>
+        <div id="box-eight" data-index-number="8"></div>
     </main>
 
     <section id="results">
         <h2>Player <span></span> wins! </h2>
+        <p></p>
     </section>
 
     <footer>
