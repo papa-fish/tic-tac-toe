@@ -1,15 +1,47 @@
-A README.md file with these sections:
+# Tic-Tac-Toe
 
-☐ <Your game's title>: A description of your game. Background info of the game is a nice touch.
+This is a simple implementation of the classic game Tic-Tac-Toe, or Naughts and Crosses. It is a two-player game planned on a 3x3 board. The players take turns making spaces on the board with their respective symbols ('X' - player one, 'O' - player two) with the objects of getting three of their symbols in a row, either horizontally, vertically, or diagonally.
 
-☐ Screenshot(s): Images of your actual game.
+## Screenshots:
 
-☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
+![default board](screenshots/Screenshot%202023-06-08%20at%2014.29.51.png)
+![draw](screenshots/Screenshot%202023-06-08%20at%2014.30.15.png)
+![player two wins!](screenshots/Screenshot%202023-06-08%20at%2014.30.29.png)
+![player one wins!](screenshots/Screenshot%202023-06-08%20at%2014.30.40.png)
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
+## Technologies Uses
 
-☐ Next Steps: Planned future enhancements (icebox items).
+The Tic-Tac-Toe game is built using the following technologies:
 
-Note: Don't underestimate the value of a well crafted README.md. The README.md introduces your project to prospective employers and forms their first impression of your work!
+- JavaScript
+- HTML
+- CSS
 
-☐ Frequent commits (at least 1 every day) dating back to the very beginning of the project. Never delete you repo to "start over". Commit messages should be in the present tense, e.g., "Style game board" instead of "Styled game board". Be sure to create the repo on your personal GitHub account and ensure that it is "public".
+## Getting Started
+
+To play my version of Tic-Tac-Toe, you can visit the following link: [Tic-Tac-Toe](https://papa-fish.github.io/tic-tac-toe/)
+
+Once you have accessed the game, follow these instructions to play:
+
+    1. Open the game in your web browser.
+    2. The game will display an empty 3x3 board.
+    3. Player 1 will be assigned 'X' as their symbol, and Player 2 will be assigned 'O'.
+    4. Player 1 starts the game by clicking on an empty space on the board to place their 'X'.
+    5. Players take turns are placing their symbol on the board until one of the following conditions is met:
+        - One player has three of their symbols in a row horizontally, vertically, or diagonally.
+        - All spaces on the board are filled, resulting in a draw.
+    6. When the round ends, a message will be displayed indicating the winner or a draw.
+    7. If a player wins the round, their score will be added to their total score below the board.
+    8. To start a new game, click on the "Play Again?" button that appears at the bottom of the page after a winner is announced, or a draw occurs.
+    9. You can reset the accumlated scores of the players by pressing the "Reset Scores" button.
+
+    Enjoy playing Tic-Tac-Toe!
+
+## Next Steps
+
+Here are some planned future enhancements for the Tic-Tac-Toe game:
+
+- Implement an AI opponent, allowing players to play against the computer.
+- Enhance the user interface with animations and visual effects.
+- Provide different board sizes and game modes to offer more gameplay variations.
+- Implement an option for multiplayer online gameplay, allowing players to compete with others remotely.
