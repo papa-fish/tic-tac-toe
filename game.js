@@ -23,10 +23,11 @@ const spanElem = document.querySelector('p span');
 const resetScoreBtn = document.querySelector('#reset-score-btn');
 const playerOneScore = document.querySelector('#player-one-score');
 const playerTwoScore = document.querySelector('#player-two-score');
+const confetti = document.querySelector('#confetti-canvas');
 
-// -- audio variables ===========================
-const audioClicking = new Audio('/sound-effects/click-152513.mp3');
-const audioCelebrate = new Audio('/sound-effects/grunt-birthday-party-sound.mp3');
+// -- audio & animation variables ===========================
+const audioClicking = new Audio('./sound-effects/click-152513.mp3');
+const audioCelebrate = new Audio('./sound-effects/grunt-birthday-party-sound.mp3');
 audioClicking.volume = 0.5;
 audioCelebrate.volume = 0.2;
 
