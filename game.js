@@ -1,4 +1,4 @@
-// -- game board global variables ===============
+// -- global variables ===============
 const winningCombinations = [
     [0, 1, 2],
     [0, 3, 6],

@@ -5,7 +5,7 @@
     text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
@@ -19,6 +19,12 @@ header {
 p {
     text-align: center;
     font-size: 2rem;
+    margin: 0 0 1% 0;
+}
+
+.player-turn {
+    display: flex;
+    justify-content: center;
 }
 
 .player-turn > h2 {
@@ -46,17 +52,25 @@ p {
     padding-top: 18%;
 }
 
+#score-title {
+    font-size: 3rem;
+    margin: 2% 0 0% 0;
+    text-decoration: underline;
+}
+
 #results {
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 #reset-score-btn {
-    background-color: #FBE7C6;
+    font-size: 1rem;
+    background-color: #FFAEBC;
+    margin: 0 3% 0 3%;
 }
 
 #results > h3 {
-    display: inline-block;
-    padding: 1rem 0 0 2rem;
+    font-size: 2rem;
 }
 
 footer, #results {
