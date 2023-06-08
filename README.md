@@ -1,5 +1,7 @@
 # Tic-Tac-Toe
 
+To play my version of Tic-Tac-Toe, you can visit the following link: [Tic-Tac-Toe](https://papa-fish.github.io/tic-tac-toe/)
+
 This is a simple implementation of the classic game Tic-Tac-Toe, or Naughts and Crosses. It is a two-player game planned on a 3x3 board. The players take turns making spaces on the board with their respective symbols ('X' - player one, 'O' - player two) with the objects of getting three of their symbols in a row, either horizontally, vertically, or diagonally.
 
 ## Screenshots:
@@ -18,8 +20,6 @@ The Tic-Tac-Toe game is built using the following technologies:
 - CSS
 
 ## Getting Started
-
-To play my version of Tic-Tac-Toe, you can visit the following link: [Tic-Tac-Toe](https://papa-fish.github.io/tic-tac-toe/)
 
 Once you have accessed the game, follow these instructions to play:
 
