@@ -1,13 +1,22 @@
 * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    background-color: #FBE7C6;
+    color: lavender;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
     text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
+
+canvas {
+    position: absolute;
+  }
 
 header {
     display: flex;
@@ -16,10 +25,24 @@ header {
     margin: 0 0 0 0;
 }
 
+body {
+    background-image: url(background/pexels-fwstudio-129733.jpg);
+}
+
 p {
     text-align: center;
     font-size: 2rem;
     margin: 0 0 1% 0;
+}
+
+img {
+    display: inline-block;
+}
+
+button {
+    text-shadow: none;
+    color: black;
+    font-weight: bold;
 }
 
 .player-turn {
@@ -30,6 +53,7 @@ p {
 .player-turn > h2 {
     text-align: center;
     font-size: 2rem;
+    padding: 10px;
     margin-bottom: 40px;
     background-color: #B4F8C8;
 }
@@ -39,17 +63,19 @@ p {
     justify-content: center;
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px;
-    font-size: 5rem;
 }
 
 .board > div {
     background-color: #A0E7E5;
     border: 2px solid black;
+    color: black;
+    text-shadow: none;
+    font-size: 8rem;
 }
 
 .o, .x {
     text-align: center;
-    padding-top: 18%;
+    line-height: 200px;
 }
 
 #score-title {
@@ -65,8 +91,9 @@ p {
 
 #reset-score-btn {
     font-size: 1rem;
-    background-color: #FFAEBC;
+    background-color: salmon;
     margin: 0 3% 0 3%;
+    width: 150px;
 }
 
 #results > h3 {

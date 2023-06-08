@@ -15,6 +15,7 @@ let turnTracker = 0;
 let playerOneChoices = [];
 let playerTwoChoices = [];
 
+
 // -- DOM variables =============================
 const playerChoice = document.querySelectorAll('.board div');
 const h2Elem = document.querySelector('.player-turn h2');
@@ -23,17 +24,20 @@ const spanElem = document.querySelector('p span');
 const resetScoreBtn = document.querySelector('#reset-score-btn');
 const playerOneScore = document.querySelector('#player-one-score');
 const playerTwoScore = document.querySelector('#player-two-score');
-// const confetti = document.querySelector('#confetti-canvas');
+const canvas = document.querySelector('#confetti');
 
 // -- audio & animation variables ===========================
+const jsConfetti = new JSConfetti();
 const audioClicking = new Audio('./sound-effects/click-152513.mp3');
 const audioCelebrate = new Audio('./sound-effects/grunt-birthday-party-sound.mp3');
+const audioAwwww = new Audio('./sound-effects/awwww.mp3')
 audioClicking.volume = 0.5;
 audioCelebrate.volume = 0.2;
+audioAwwww.volume = 0.2;
 
 // -- event listeners ===========================
 for (let choice of playerChoice) {
-    choice.addEventListener('click', handlePlayerTurn);
+    choice.addEventListener('click', handleDraw);
 };
 
 playAgainBtn.addEventListener('click', handlePlayAgain);
@@ -53,8 +57,8 @@ function processPlayerTurn(tokenPlacement) {
         playerOneChoices.push(tokenPlacementValue);
         h2Elem.innerText = "Player Two's Turn";
         h2Elem.style.backgroundColor = "#FFAEBC";
-        checkWinningCombinations(playerOneChoices);
-        tokenPlacement.removeEventListener('click', handlePlayerTurn);
+        handleWinningConditions(playerOneChoices);
+        tokenPlacement.removeEventListener('click', handleDraw);
         audioClicking.play();
 
     } else {
@@ -64,28 +68,29 @@ function processPlayerTurn(tokenPlacement) {
         playerTwoChoices.push(tokenPlacementValue);
         h2Elem.innerText = "Player One's Turn";
         h2Elem.style.backgroundColor = "#B4F8C8";
-        checkWinningCombinations(playerTwoChoices);
-        tokenPlacement.removeEventListener('click', handlePlayerTurn);
+        handleWinningConditions(playerTwoChoices);
+        tokenPlacement.removeEventListener('click', handleDraw);
         audioClicking.play();
     }
 
     spanElem.innerText = turnTracker;
 };
 
-function handlePlayerTurn(event) {
+function handleDraw(event) {
     
     const tokenPlacement = event.target
     processPlayerTurn(tokenPlacement);
  
-    if (turnTracker === 9 && checkWinningCombinations(playerOneChoices) === false) {  
+    if (turnTracker === 9 && handleWinningConditions(playerOneChoices) === false) {  
         h2Elem.innerText = "DRAW";
         playAgainBtn.style.display = "inline-block";
+        audioAwwww.play();
         return;
     }
     isPlayerOneTurn = !isPlayerOneTurn;
 };
 
-function checkWinningCombinations(array) {
+function handleWinningConditions(array) {
 
     for (const combination of winningCombinations) {
 
@@ -98,20 +103,16 @@ function checkWinningCombinations(array) {
                 h2Elem.style.backgroundColor = "#B4F8C8";
                 playerOneScore.innerText++;
                 audioCelebrate.play();
-                
-                for (let choice of playerChoice) {
-                    choice.removeEventListener('click', handlePlayerTurn);
-                }
+                animationConfetti();
+                disableEventListeners();
 
             } else if (isPlayerOneTurn === false) {
                 h2Elem.innerText = "Player Two Wins!";
                 h2Elem.style.backgroundColor = "#FFAEBC";
                 playerTwoScore.innerText++;
                 audioCelebrate.play();
-                
-                for (let choice of playerChoice) {
-                    choice.removeEventListener('click', handlePlayerTurn);
-                }
+                animationConfetti();
+                disableEventListeners();
                 
             }
             return true;
@@ -133,7 +134,7 @@ function handlePlayAgain(event) {
 
     for (let choice of playerChoice) {
         choice.innerText = "";
-        choice.addEventListener('click', handlePlayerTurn);
+        choice.addEventListener('click', handleDraw);
         choice.classList.remove('x');
         choice.classList.remove('o');
     }
@@ -143,4 +144,14 @@ function handlePlayAgain(event) {
 function handleResetScore(event) {
     playerOneScore.innerText = "0";
     playerTwoScore.innerText = "0";
+};
+
+function disableEventListeners() {
+    for (let choice of playerChoice) {
+        choice.removeEventListener('click', handleDraw);
+    }
+}
+
+function animationConfetti() {
+    jsConfetti.addConfetti()
 };
