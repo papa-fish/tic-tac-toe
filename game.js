@@ -23,7 +23,7 @@ const spanElem = document.querySelector('p span');
 const resetScoreBtn = document.querySelector('#reset-score-btn');
 const playerOneScore = document.querySelector('#player-one-score');
 const playerTwoScore = document.querySelector('#player-two-score');
-const confetti = document.querySelector('#confetti-canvas');
+// const confetti = document.querySelector('#confetti-canvas');
 
 // -- audio & animation variables ===========================
 const audioClicking = new Audio('./sound-effects/click-152513.mp3');
