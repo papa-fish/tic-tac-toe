@@ -6,10 +6,10 @@ This is a simple implementation of the classic game Tic-Tac-Toe, or Naughts and 
 
 ## Screenshots:
 
-![default board](screenshots/Screenshot%202023-06-08%20at%2014.29.51.png)
-![draw](screenshots/Screenshot%202023-06-08%20at%2014.30.15.png)
-![player two wins!](screenshots/Screenshot%202023-06-08%20at%2014.30.29.png)
-![player one wins!](screenshots/Screenshot%202023-06-08%20at%2014.30.40.png)
+![default board](screenshots/Screenshot%202023-06-09%20at%2007.59.20.png)
+![player one wins!](screenshots/Screenshot%202023-06-09%20at%2007.59.36.png)
+![player two wins!](screenshots/Screenshot%202023-06-09%20at%2007.59.52.png)
+![draw](screenshots/Screenshot%202023-06-09%20at%2008.00.32.png)
 
 ## Technologies Uses
 
@@ -42,6 +42,6 @@ Once you have accessed the game, follow these instructions to play:
 Here are some planned future enhancements for the Tic-Tac-Toe game:
 
 - Implement an AI opponent, allowing players to play against the computer.
-- Enhance the user interface with animations and visual effects.
+- ~~Enhance the user interface with animations and visual effects.~~
 - Provide different board sizes and game modes to offer more gameplay variations.
 - Implement an option for multiplayer online gameplay, allowing players to compete with others remotely.
