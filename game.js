@@ -89,10 +89,20 @@ function checkWinningCombinations(array) {
                 h2Elem.innerText = "Player One Wins!";
                 h2Elem.style.backgroundColor = "#B4F8C8";
                 playerOneScore.innerText++;
+                
+                for (let choice of playerChoice) {
+                    choice.removeEventListener('click', handlePlayerTurn);
+                }
+
             } else if (isPlayerOneTurn === false) {
                 h2Elem.innerText = "Player Two Wins!";
                 h2Elem.style.backgroundColor = "#FFAEBC";
                 playerTwoScore.innerText++;
+                
+                for (let choice of playerChoice) {
+                    choice.removeEventListener('click', handlePlayerTurn);
+                }
+                
             }
             return true;
         }  
