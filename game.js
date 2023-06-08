@@ -56,7 +56,7 @@ function processPlayerTurn(tokenPlacement) {
         tokenPlacement.innerText = "X";
         playerOneChoices.push(tokenPlacementValue);
         h2Elem.innerText = "Player Two's Turn";
-        h2Elem.style.backgroundColor = "#FFAEBC";
+        h2Elem.style.backgroundColor = "#ffaebb80";
         handleWinningConditions(playerOneChoices);
         tokenPlacement.removeEventListener('click', handleDraw);
         audioClicking.play();
@@ -67,7 +67,7 @@ function processPlayerTurn(tokenPlacement) {
         tokenPlacement.innerText = "O";
         playerTwoChoices.push(tokenPlacementValue);
         h2Elem.innerText = "Player One's Turn";
-        h2Elem.style.backgroundColor = "#B4F8C8";
+        h2Elem.style.backgroundColor = "#b4f8ca80";
         handleWinningConditions(playerTwoChoices);
         tokenPlacement.removeEventListener('click', handleDraw);
         audioClicking.play();
@@ -84,6 +84,7 @@ function handleDraw(event) {
     if (turnTracker === 9 && handleWinningConditions(playerOneChoices) === false) {  
         h2Elem.innerText = "DRAW";
         playAgainBtn.style.display = "inline-block";
+        h2Elem.style.backgroundColor = "salmon";
         audioAwwww.play();
         return;
     }
@@ -100,7 +101,7 @@ function handleWinningConditions(array) {
 
             if (isPlayerOneTurn === true) {
                 h2Elem.innerText = "Player One Wins!";
-                h2Elem.style.backgroundColor = "#B4F8C8";
+                h2Elem.style.backgroundColor = "#b4f8ca80";
                 playerOneScore.innerText++;
                 audioCelebrate.play();
                 animationConfetti();
@@ -108,7 +109,7 @@ function handleWinningConditions(array) {
 
             } else if (isPlayerOneTurn === false) {
                 h2Elem.innerText = "Player Two Wins!";
-                h2Elem.style.backgroundColor = "#FFAEBC";
+                h2Elem.style.backgroundColor = "#ffaebb80";
                 playerTwoScore.innerText++;
                 audioCelebrate.play();
                 animationConfetti();
@@ -127,7 +128,7 @@ function handlePlayAgain(event) {
     turnTracker = 0;
     spanElem.innerText = turnTracker;
     h2Elem.innerText = "Player One's Turn";
-    h2Elem.style.backgroundColor = "#B4F8C8";
+    h2Elem.style.backgroundColor = "#b4f8ca80";
     playerOneChoices = [];
     playerTwoChoices = [];
 

@@ -41,7 +41,7 @@ img {
 
 button {
     text-shadow: none;
-    color: black;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -55,7 +55,7 @@ button {
     font-size: 2rem;
     padding: 10px;
     margin-bottom: 40px;
-    background-color: #B4F8C8;
+    background-color: #b4f8ca80;
 }
 
 .board {
@@ -66,9 +66,9 @@ button {
 }
 
 .board > div {
-    background-color: #A0E7E5;
-    border: 2px solid black;
-    color: black;
+    background-color: #ffffff20;
+    border: 2px solid #000000;
+    color: #000000;
     text-shadow: none;
     font-size: 8rem;
 }
