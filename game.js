@@ -24,6 +24,11 @@ const resetScoreBtn = document.querySelector('#reset-score-btn');
 const playerOneScore = document.querySelector('#player-one-score');
 const playerTwoScore = document.querySelector('#player-two-score');
 
+// -- audio variables ===========================
+const audioClicking = new Audio('/sound-effects/click-152513.mp3');
+const audioCelebrate = new Audio('/sound-effects/grunt-birthday-party-sound.mp3');
+audioClicking.volume = 0.5;
+audioCelebrate.volume = 0.2;
 
 // -- event listeners ===========================
 for (let choice of playerChoice) {
@@ -49,6 +54,7 @@ function processPlayerTurn(tokenPlacement) {
         h2Elem.style.backgroundColor = "#FFAEBC";
         checkWinningCombinations(playerOneChoices);
         tokenPlacement.removeEventListener('click', handlePlayerTurn);
+        audioClicking.play();
 
     } else {
 
@@ -59,6 +65,7 @@ function processPlayerTurn(tokenPlacement) {
         h2Elem.style.backgroundColor = "#B4F8C8";
         checkWinningCombinations(playerTwoChoices);
         tokenPlacement.removeEventListener('click', handlePlayerTurn);
+        audioClicking.play();
     }
 
     spanElem.innerText = turnTracker;
@@ -89,6 +96,7 @@ function checkWinningCombinations(array) {
                 h2Elem.innerText = "Player One Wins!";
                 h2Elem.style.backgroundColor = "#B4F8C8";
                 playerOneScore.innerText++;
+                audioCelebrate.play();
                 
                 for (let choice of playerChoice) {
                     choice.removeEventListener('click', handlePlayerTurn);
@@ -98,6 +106,7 @@ function checkWinningCombinations(array) {
                 h2Elem.innerText = "Player Two Wins!";
                 h2Elem.style.backgroundColor = "#FFAEBC";
                 playerTwoScore.innerText++;
+                audioCelebrate.play();
                 
                 for (let choice of playerChoice) {
                     choice.removeEventListener('click', handlePlayerTurn);
