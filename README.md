@@ -2,14 +2,14 @@
 
 To play my version of Tic-Tac-Toe, you can visit the following link: [Tic-Tac-Toe](https://papa-fish.github.io/tic-tac-toe/)
 
-This is a simple implementation of the classic game Tic-Tac-Toe, or Naughts and Crosses. It is a two-player game planned on a 3x3 board. The players take turns making spaces on the board with their respective symbols ('X' - player one, 'O' - player two) with the objects of getting three of their symbols in a row, either horizontally, vertically, or diagonally.
+This is a simple implementation of the classic game Tic-Tac-Toe, or Naughts and Crosses. It is a two-player game planned on a 3x3 board. The players take turns making spaces on the board with their respective symbols ('X' - player one, 'O' - player two) with the objective of getting three of their symbols in a row, either horizontally, vertically, or diagonally.
 
 ## Screenshots:
 
-![default board](screenshots/Screenshot%202023-06-09%20at%2007.59.20.png)
-![player one wins!](screenshots/Screenshot%202023-06-09%20at%2007.59.36.png)
-![player two wins!](screenshots/Screenshot%202023-06-09%20at%2007.59.52.png)
-![draw](screenshots/Screenshot%202023-06-09%20at%2008.00.32.png)
+![default board](screenshots/Screenshot%202023-06-09%20at%2010.00.19.png)
+![player one wins!](screenshots/Screenshot%202023-06-09%20at%2010.00.31.png)
+![player two wins!](screenshots/Screenshot%202023-06-09%20at%2010.00.53.png)
+![draw](screenshots/Screenshot%202023-06-09%20at%2010.01.14.png)
 
 ## Technologies Uses
 
